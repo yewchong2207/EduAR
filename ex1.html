@@ -8,14 +8,13 @@
 <body style='margin : 0px; overflow: hidden;'>
 
   <a-scene embedded arjs>
-    <!-- <a-assets>
-        <a-asset-item id="tree" src="picture/pattern-Computer skills.png"></a-asset-item>
-    </a-assets> -->
-
-    <a-entity gltf-model="#tree" position="0 3 0" rotation="0 90 0" scale="3 3 3"></a-entity> 
-
-    <a-marker-camera type='pattern' url='https://yewchong2207.github.io/EduAR/markers/pattern-Computer skills.patt'></a-marker-camera>
-
+    <a-marker type='pattern' url='https://yewchong2207.github.io/EduAR/markers/pattern-Computer skills.patt'>
+        <a-image src="picture/pattern-Computer skills.png.png"
+          position= "0 1 0"
+          scale= "1 1 1"
+          rotation="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 7000"/>
+    </a-marker>
+    <a-entity camera></a-entity>
   </a-scene>
 
 </body>
