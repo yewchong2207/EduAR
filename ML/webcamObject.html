@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="webcam"></div>
+                <p>
+                    <button onclick="takeScreenShot()" class="btn">Take Photo</button>
+                </p>
+            </div>
+            <div class="col">
+                <div id="result">
+                    Your captured image here
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ctx;
+
+        // Initialize the Image Classifier method with MobileNet
+        const objectDetector = ml5.objectDetector('cocossd', {}, modelLoaded);
+
+        // When the model is loaded
+        function modelLoaded() {
+            console.log('Model Loaded!');
+        }
+
+        Webcam.set({
+            width: 600,
+            height: 400,
+            image_format: 'jpeg',
+            jpeg_quality: 90,
+            facingMode: 'environment'
+        });
+        Webcam.attach('webcam');
+
+        function takeScreenShot() {
+            Webcam.snap(function(data_uri){
+                document.getElementById('result').innerHTML = "<h2>Here is your image: </h2> <img id='image' src='"+ data_uri +"' alt='error' width='400'>";
+                // console.log(data_uri);
+
+                // Make a prediction with a selected image
+                objectDetector.detect(document.getElementById('image'), (err, results) => {
+                    console.log(results); // Will output bounding boxes of detected objects
+                    draw();
+                });
+            });
+        }
+
+        function draw(){ //draw bouding box
+        // Clear part of the canvas
+        ctx = document.getElementById('image');
+        ctx.fillStyle = "#000000"
+        ctx.fillRect(0,0, 10, 10);
+
+        ctx.drawImage(document.getElementById('image'), 0, 0);
+        for (let i = 0; i < objects.length; i += 1) {
+            
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "green";
+            ctx.fillText(objects[i].label, objects[i].x + 4, objects[i].y + 16); 
+
+            ctx.beginPath();
+            ctx.rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+            ctx.strokeStyle = "green";
+            ctx.stroke();
+            ctx.closePath();
+        }
+        }
+    </script>
+    
+</body>
+</html>
