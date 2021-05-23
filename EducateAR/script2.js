@@ -44,5 +44,4 @@ function render(m) {
 
     setModel(models[m], model);
 
-    marker.appendChild(model);
 }
