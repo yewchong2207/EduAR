@@ -39,12 +39,13 @@
             console.log('Model Loaded!');
         }
 
-        Webcam.set('constraints',{
+        Webcam.set({
             width: 600,
             height: 400,
             image_format: 'jpeg',
             jpeg_quality: 90,
             facingMode: 'environment',
+            video: true
         });
         Webcam.attach('webcam');
 
