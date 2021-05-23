@@ -35,16 +35,12 @@ var setModel = function (model, entity) {
         entity.setAttribute('position', model.position);
     }
 
-    entity.setAttribute("id", "model");
-    entity.setAttribute("class", "clickable");
-    entity.setAttribute("gesture-handler");
-
     entity.setAttribute('gltf-model', model.url);
 };
 
 function render(m) {
     let marker = document.querySelector('a-marker');
-    let model = document.createElement('a-entity');
+    let model = document.querySelector('#model');
 
     setModel(models[m], model);
 

@@ -19,6 +19,12 @@
     <!-- <div class="centered instructions"></div> -->
     <a-scene embedded arjs renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
         <a-marker type='pattern' url='https://yewchong2207.github.io/EduAR/markers/pattern-Computer skills.patt' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
+            <a-entity
+                id="model"
+                class="clickable"
+                gesture-handler
+            >
+            </a-entity>
 
         </a-marker>
         <a-entity camera></a-entity>
