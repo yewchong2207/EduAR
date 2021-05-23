@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div id="webcam"></div>
+                <div id="webcam" style="width:600px; height:400px;"></div>
                 <p>
                     <button onclick="takeScreenShot()" class="btn">Take Photo</button>
                 </p>
@@ -39,13 +39,11 @@
             console.log('Model Loaded!');
         }
 
-        Webcam.set({
-            width: 600,
-            height: 400,
+        Webcam.set('constraints', {
             image_format: 'jpeg',
             jpeg_quality: 90,
             facingMode: 'environment',
-            video: true
+            video: true,
         });
         Webcam.attach('webcam');
 
