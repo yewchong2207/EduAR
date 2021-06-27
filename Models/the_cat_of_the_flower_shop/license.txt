@@ -1,0 +1,11 @@
+Model Information:
+* title:	The cat of the flower shop
+* source:	https://sketchfab.com/3d-models/the-cat-of-the-flower-shop-a5475fd215f44389b388dc274efff997
+* author:	eefjevanasperen (https://sketchfab.com/eefjevanasperen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The cat of the flower shop" (https://sketchfab.com/3d-models/the-cat-of-the-flower-shop-a5475fd215f44389b388dc274efff997) by eefjevanasperen (https://sketchfab.com/eefjevanasperen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
