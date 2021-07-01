@@ -56,8 +56,8 @@
                 objectDetector.detect(document.getElementById('image'), (err, results) => {
                     console.log(results); // Will output bounding boxes of detected objects
                     if (results[0].label == "cat"){
-                            prediction.innerHTML = "<h3>" + results[0].label + "</h3>";
-                            prediction.innerHTML += "<a href='https://leeszeyuan.github.io/Testing/complete/lecture3_9/'>Link</a>";
+                            prediction.innerHTML = "<h3>" + "Image detected: Knight" + "</h3>";
+                            prediction.innerHTML += "<a href='https://leeszeyuan.github.io/Testing/complete/lecture3_11/'>Link</a>";
                     }
 
                 });
