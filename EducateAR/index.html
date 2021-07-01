@@ -55,8 +55,11 @@
                 // Make a prediction with a selected image
                 objectDetector.detect(document.getElementById('image'), (err, results) => {
                     console.log(results); // Will output bounding boxes of detected objects
-                    prediction.innerHTML = "<h3>" + results[0].label + "</h3>";
-                    prediction.innerHTML += "<a href=scan.html?m=" + results[0].label + ">Link</a>";
+                    if (results[0].label == "cat"){
+                            prediction.innerHTML = "<h3>" + results[0].label + "</h3>";
+                            prediction.innerHTML += "<a href='https://leeszeyuan.github.io/Testing/complete/lecture3_9/'>Link</a>";
+                    }
+
                 });
             });
         }
